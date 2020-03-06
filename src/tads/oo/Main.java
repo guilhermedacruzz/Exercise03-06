@@ -25,10 +25,10 @@ public class Main {
         int op;
 
         do{
-            car = menuCar() - 1;
+            car = menuCar(cars) - 1;
 
             if(car != -1) {
-                op = menuBar();
+                op = menuBar(cars[car]);
                 switch (op) {
                     case 1:
                         limparTela();
@@ -74,21 +74,21 @@ public class Main {
         }
     }
 
-    public static int menuCar() {
+    public static int menuCar(Car[] cars) {
 
         int leitura;
 
         do{
             limparTela();
 
-            System.out.println("\t/*********************************|\n");
-            System.out.println("\t|*********    MENU    ***** ->   *|\n\n");
-            System.out.println("\t|  1 -\tCarro  1                  |\n");
-            System.out.println("\t|  2 -\tCarro  2                  |\n");
-            System.out.println("\t|  3 -\tCarro  3                  |\n");
-            System.out.println("\t|  0 -\tSair                      |\n\n");
-            System.out.println("\t|*********************************/\n\n");
-            System.out.println("\t[Controle pelas setas ou digite o número correspondente]\n\n\t");
+            System.out.printf("\t/*********************************|\n");
+            System.out.printf("\t|*********    MENU    ***** ->   *|\n\n");
+            System.out.printf("\t|  1 -\t%s                  \n", cars[0].getModelo());
+            System.out.printf("\t|  2 -\t%s                  \n", cars[1].getModelo());
+            System.out.printf("\t|  3 -\t%s                  \n", cars[2].getModelo());
+            System.out.printf("\t|  0 -\tSair                      |\n\n");
+            System.out.printf("\t|*********************************/\n\n");
+            System.out.printf("\t[Controle pelas setas ou digite o número correspondente]\n\n\t");
 
             leitura = new Scanner(System.in).nextInt();
 
@@ -97,21 +97,21 @@ public class Main {
         return leitura;
     }
 
-    public static int menuBar() {
+    public static int menuBar(Car car) {
 
         int leitura;
 
         do{
             limparTela();
 
-            System.out.println("\t/*********************************|\n");
-            System.out.println("\t|*********    MENU    ***** ->   *|\n\n");
-            System.out.println("\t|  1 -\tAbastecer                 |\n");
-            System.out.println("\t|  2 -\tAcelerar                  |\n");
-            System.out.println("\t|  3 -\tStatus                    |\n");
-            System.out.println("\t|  0 -\tSair                      |\n\n");
-            System.out.println("\t|*********************************/\n\n");
-            System.out.println("\t[Controle pelas setas ou digite o número correspondente]\n\n\t");
+            System.out.printf("\t/*********************************|\n");
+            System.out.printf("\t|*********    MENU    ***** -> %s\n\n", car.getModelo());
+            System.out.printf("\t|  1 -\tAbastecer                 |\n");
+            System.out.printf("\t|  2 -\tAcelerar                  |\n");
+            System.out.printf("\t|  3 -\tStatus                    |\n");
+            System.out.printf("\t|  0 -\tSair                      |\n\n");
+            System.out.printf("\t|*********************************/\n\n");
+            System.out.printf("\t[Controle pelas setas ou digite o número correspondente]\n\n\t");
 
             leitura = new Scanner(System.in).nextInt();
 
