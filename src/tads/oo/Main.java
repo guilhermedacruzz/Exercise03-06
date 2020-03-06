@@ -66,7 +66,7 @@ public class Main {
 
         }while(car != -1);
 
-        if(cars[2] == cars[3]){
+        if(cars[2] == cars[3]){ // Não funciona dá que são diferentes Sempre
             System.out.println("Os carros 3 e 4 são iguais!");
         }
         else {
@@ -83,9 +83,9 @@ public class Main {
 
             System.out.printf("\t/*********************************|\n");
             System.out.printf("\t|*********    MENU    ***** ->   *|\n\n");
-            System.out.printf("\t|  1 -\t%s                  \n", cars[0].getModelo());
-            System.out.printf("\t|  2 -\t%s                  \n", cars[1].getModelo());
-            System.out.printf("\t|  3 -\t%s                  \n", cars[2].getModelo());
+            System.out.printf("\t|  1 -\t%s                  \n", cars[0].modelo);
+            System.out.printf("\t|  2 -\t%s                  \n", cars[1].modelo);
+            System.out.printf("\t|  3 -\t%s                  \n", cars[2].modelo);
             System.out.printf("\t|  0 -\tSair                      |\n\n");
             System.out.printf("\t|*********************************/\n\n");
             System.out.printf("\t[Controle pelas setas ou digite o número correspondente]\n\n\t");
@@ -105,7 +105,7 @@ public class Main {
             limparTela();
 
             System.out.printf("\t/*********************************|\n");
-            System.out.printf("\t|*********    MENU    ***** -> %s\n\n", car.getModelo());
+            System.out.printf("\t|*********    MENU    ***** -> %s\n\n", car.modelo);
             System.out.printf("\t|  1 -\tAbastecer                 |\n");
             System.out.printf("\t|  2 -\tAcelerar                  |\n");
             System.out.printf("\t|  3 -\tStatus                    |\n");
@@ -121,11 +121,7 @@ public class Main {
     }
 
     public static void limparTela() {
-        try {
-            Runtime.getRuntime().exec("clear");
-        }
-        catch(Exception e) {
-            System.out.println("Erro");
-        }
+        for(int i = 0; i < 100; i++)
+            System.out.println();
     }
 }
