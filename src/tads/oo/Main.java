@@ -25,10 +25,10 @@ public class Main {
         int op;
 
         do{
-            car = menuCar(cars) - 1;
+            car = menuCar(cars, sc) - 1;
 
             if(car != -1) {
-                op = menuBar(cars[car]);
+                op = menuBar(cars[car], sc);
                 switch (op) {
                     case 1:
                         limparTela();
@@ -74,7 +74,7 @@ public class Main {
         }
     }
 
-    public static int menuCar(Car[] cars) {
+    public static int menuCar(Car[] cars, Scanner sc) {
 
         int leitura;
 
@@ -90,14 +90,14 @@ public class Main {
             System.out.printf("\t|*********************************/\n\n");
             System.out.printf("\t[Controle pelas setas ou digite o número correspondente]\n\n\t");
 
-            leitura = new Scanner(System.in).nextInt();
+            leitura = sc.nextInt();
 
         }while (leitura < 0 || leitura > 3);
 
         return leitura;
     }
 
-    public static int menuBar(Car car) {
+    public static int menuBar(Car car, Scanner sc) {
 
         int leitura;
 
@@ -113,7 +113,7 @@ public class Main {
             System.out.printf("\t|*********************************/\n\n");
             System.out.printf("\t[Controle pelas setas ou digite o número correspondente]\n\n\t");
 
-            leitura = new Scanner(System.in).nextInt();
+            leitura = sc.nextInt();
 
         }while (leitura < 0 || leitura > 3);
 
